@@ -47,8 +47,7 @@ gradle clean test
 > Test the API using curl command:
 ```curl -d '{"startDate":"20/10/2018 11:20:44", "endDate":"21/10/2018 12:20:44"}' -H "Content-Type: application/json" -X POST http://localhost:9080/api/ACC334455/getCurrentBalance```
 
-Output received in JSON:
-
+> Output received in JSON:
 ```{"accountId":"ACC334455","availableBalance":42.75,"fromDate":"20/10/2018 11:20:44","toDate":"21/10/2018 12:20:44"}```
 ---
 3. Get all transactions from database
@@ -61,7 +60,7 @@ Output received in JSON:
 
 > curl -X GET http://localhost:9080/api/getAllTransactions
 
-Output received in JSON:
+> Output received in JSON:
 ```{"transactionId":"TX10001","fromAccountId":"ACC334455","toAccountId":"ACC778899","createdAt":"2018-10-20T01:47:55.000+0000","amount":25.00,"transactionType":"PAYMENT","relatedTransaction":null},{"transactionId":"TX10002","fromAccountId":"ACC334455","toAccountId":"ACC998877","createdAt":"2018-10-20T06:33:43.000+0000","amount":10.50,"transactionType":"PAYMENT","relatedTransaction":null},{"transactionId":"TX10003","fromAccountId":"ACC998877","toAccountId":"ACC778899","createdAt":"2018-10-20T07:00:00.000+0000","amount":5.00,"transactionType":"PAYMENT","relatedTransaction":null},{"transactionId":"TX10004","fromAccountId":"ACC334455","toAccountId":"ACC998877","createdAt":"2018-10-20T08:45:00.000+0000","amount":10.50,"transactionType":"REVERSAL","relatedTransaction":"TX10002"},{"transactionId":"TX10005","fromAccountId":"ACC334455","toAccountId":"ACC778899","createdAt":"2018-10-20T22:30:00.000+0000","amount":7.25,"transactionType":"PAYMENT","relatedTransaction":null}]```
 ---
 4. List down the transactions in the given time frame (start and end date and time)
@@ -74,7 +73,7 @@ Output received in JSON:
 
 > curl -d '{"startDate":"20/10/2018 11:20:44", "endDate":"21/10/2018 12:20:44"}' -H "Content-Type: application/json" -X POST http://localhost:9080/api/getTimeBoundTransactions
 
-Output received in JSON:
+> Output received in JSON:
 ```[{"transactionId":"TX10001","fromAccountId":"ACC334455","toAccountId":"ACC778899","createdAt":"2018-10-20T01:47:55.000+0000","amount":25.00,"transactionType":"PAYMENT","relatedTransaction":null},{"transactionId":"TX10002","fromAccountId":"ACC334455","toAccountId":"ACC998877","createdAt":"2018-10-20T06:33:43.000+0000","amount":10.50,"transactionType":"PAYMENT","relatedTransaction":null},{"transactionId":"TX10003","fromAccountId":"ACC998877","toAccountId":"ACC778899","createdAt":"2018-10-20T07:00:00.000+0000","amount":5.00,"transactionType":"PAYMENT","relatedTransaction":null},{"transactionId":"TX10004","fromAccountId":"ACC334455","toAccountId":"ACC998877","createdAt":"2018-10-20T08:45:00.000+0000","amount":10.50,"transactionType":"REVERSAL","relatedTransaction":"TX10002"}]```
 
 
